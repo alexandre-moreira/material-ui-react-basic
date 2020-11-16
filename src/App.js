@@ -35,9 +35,11 @@ function App() {
       
       <header className="App-header">
       <TextField 
-        variant="outlined"
+        variant="filled"
         color="secondary"
-        type="date"
+        type="email"
+        label="The Time"
+        placeholder="teste@teste.com"
         
         />
         <CheckboxExemple />
