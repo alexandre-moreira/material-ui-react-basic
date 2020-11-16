@@ -16,6 +16,11 @@ import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+
+
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #fe6b8b, #ff8e53)',
@@ -73,13 +78,27 @@ function App() {
       <Container maxWidth="sm">
         <div className="App">
           <header className="App-header">
+
             <Typography variant='h2'>
               Welcome to MUI
             </Typography>
             <Typography variant='subtitle1'>
             Learn how to use Material Ui
             </Typography>
+
+            <Grid container spacing={2} justify="center">
+              <Grid item xs={3} sm={6}>
+                <Paper style={{height:75, width:'100%', }} />
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                <Paper style={{height:75, width:'100%'}} />
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                <Paper style={{height:75, width:'100%'}} />
+              </Grid>
+            </Grid>
             <ButtonStyled />
+
             <TextField 
               variant="filled"
               color="secondary"
