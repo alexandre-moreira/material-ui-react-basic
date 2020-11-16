@@ -14,6 +14,7 @@ import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 
 const useStyles = makeStyles({
   root: {
@@ -69,42 +70,43 @@ function CheckboxExemple(){
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        
-        <header className="App-header">
-          <Typography variant='h2'>
-            Welcome to MUI
-          </Typography>
-          <Typography variant='subtitle1'>
-           Learn how to use Material Ui
-          </Typography>
-          <ButtonStyled />
-          <TextField 
-            variant="filled"
-            color="secondary"
-            type="email"
-            label="The Time"
-            placeholder="teste@teste.com"
-            
-            />
-            <CheckboxExemple />
-            <ButtonGroup variant="contained" color="primary">
-              <Button
-                startIcon={<SaveIcon />}
-              >
-                Save
-              </Button>
-
-              <Button
-                startIcon={<DeleteIcon />}
-                Save>
-                  Discard
-              </Button>
+      <Container maxWidth="sm">
+        <div className="App">
+          <header className="App-header">
+            <Typography variant='h2'>
+              Welcome to MUI
+            </Typography>
+            <Typography variant='subtitle1'>
+            Learn how to use Material Ui
+            </Typography>
+            <ButtonStyled />
+            <TextField 
+              variant="filled"
+              color="secondary"
+              type="email"
+              label="The Time"
+              placeholder="teste@teste.com"
               
-            </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+              />
+              <CheckboxExemple />
+              <ButtonGroup variant="contained" color="primary">
+                <Button
+                  startIcon={<SaveIcon />}
+                >
+                  Save
+                </Button>
+
+                <Button
+                  startIcon={<DeleteIcon />}
+                  Save>
+                    Discard
+                </Button>
+                
+              </ButtonGroup>
+              <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
   </ThemeProvider>
   );
 }
