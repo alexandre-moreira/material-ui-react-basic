@@ -13,6 +13,8 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 
+import Typography from '@material-ui/core/Typography'
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #fe6b8b, #ff8e53)',
@@ -25,6 +27,11 @@ const useStyles = makeStyles({
 })
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: 36,
+    }
+  },
   palette: {
     primary:{
       main: orange[500],
@@ -65,31 +72,37 @@ function App() {
       <div className="App">
         
         <header className="App-header">
-        <ButtonStyled />
-        <TextField 
-          variant="filled"
-          color="secondary"
-          type="email"
-          label="The Time"
-          placeholder="teste@teste.com"
-          
-          />
-          <CheckboxExemple />
-          <ButtonGroup variant="contained" color="primary">
-            <Button
-              startIcon={<SaveIcon />}
-            >
-              Save
-            </Button>
-
-            <Button
-              startIcon={<DeleteIcon />}
-              Save>
-                Discard
-            </Button>
+          <Typography variant='h2'>
+            Welcome to MUI
+          </Typography>
+          <Typography variant='subtitle1'>
+           Learn how to use Material Ui
+          </Typography>
+          <ButtonStyled />
+          <TextField 
+            variant="filled"
+            color="secondary"
+            type="email"
+            label="The Time"
+            placeholder="teste@teste.com"
             
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
+            />
+            <CheckboxExemple />
+            <ButtonGroup variant="contained" color="primary">
+              <Button
+                startIcon={<SaveIcon />}
+              >
+                Save
+              </Button>
+
+              <Button
+                startIcon={<DeleteIcon />}
+                Save>
+                  Discard
+              </Button>
+              
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
         </header>
       </div>
   </ThemeProvider>
