@@ -9,15 +9,29 @@ import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import TextField from '@material-ui/core/TextField'
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { green, orange } from '@material-ui/core/colors'
+import 'fontsource-roboto';
 
 const useStyles = makeStyles({
   root: {
-    background: 'linear-gradient(45deg, #333, #9999)',
+    background: 'linear-gradient(45deg, #fe6b8b, #ff8e53)',
     border: 0,
+    marginBottom: 15,
     borderRadius: 15,
     color: 'white',
-    padding: '0 30px'
+    padding: '5px 30px'
+  }
+})
+
+const theme = createMuiTheme({
+  palette: {
+    primary:{
+      main: orange[500],
+    },
+    secundary:{
+      main: green[400],
+    }
   }
 })
 
@@ -47,36 +61,38 @@ function CheckboxExemple(){
 
 function App() {
   return (
-    <div className="App">
-      
-      <header className="App-header">
-      <ButtonStyled />
-      <TextField 
-        variant="filled"
-        color="secondary"
-        type="email"
-        label="The Time"
-        placeholder="teste@teste.com"
+    <ThemeProvider theme={theme}>
+      <div className="App">
         
-        />
-        <CheckboxExemple />
-        <ButtonGroup variant="contained" color="primary">
-          <Button
-            startIcon={<SaveIcon />}
-          >
-            Save
-          </Button>
-
-          <Button
-            startIcon={<DeleteIcon />}
-            Save>
-              Discard
-          </Button>
+        <header className="App-header">
+        <ButtonStyled />
+        <TextField 
+          variant="filled"
+          color="secondary"
+          type="email"
+          label="The Time"
+          placeholder="teste@teste.com"
           
-        </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+          />
+          <CheckboxExemple />
+          <ButtonGroup variant="contained" color="primary">
+            <Button
+              startIcon={<SaveIcon />}
+            >
+              Save
+            </Button>
+
+            <Button
+              startIcon={<DeleteIcon />}
+              Save>
+                Discard
+            </Button>
+            
+          </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      </div>
+  </ThemeProvider>
   );
 }
 
