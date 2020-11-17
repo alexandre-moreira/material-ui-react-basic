@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 55px;
 }
 
 .App-logo {
@@ -15,6 +16,10 @@
 
 input {
   color: white !important;
+}
+
+.space{
+  margin: 15px;
 }
 
 .App-header {

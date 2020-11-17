@@ -19,13 +19,16 @@ import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
-
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
 
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #fe6b8b, #ff8e53)',
     border: 0,
-    marginBottom: 15,
+    marginBottom: 25,
     borderRadius: 15,
     color: 'white',
     padding: '5px 30px'
@@ -52,6 +55,7 @@ function ButtonStyled(){
   const classes = useStyles();
   return <Button className={classes.root}>Test Styled Button </Button>
 }
+
 function CheckboxExemple(){
   const [checked, setChecked] = React.useState(true);
   return(
@@ -78,25 +82,38 @@ function App() {
       <Container maxWidth="sm">
         <div className="App">
           <header className="App-header">
-
+            <AppBar>
+              <Toolbar>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6">
+                  MUI Themeing
+                </Typography>
+                <Button>
+                  Login
+                </Button>
+              </Toolbar>
+            </AppBar>
             <Typography variant='h2'>
               Welcome to MUI
             </Typography>
             <Typography variant='subtitle1'>
             Learn how to use Material Ui
             </Typography>
-
-            <Grid container spacing={2} justify="center">
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height:75, width:'100%', }} />
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height:75, width:'100%'}} />
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height:75, width:'100%'}} />
-              </Grid>
-            </Grid>
+            <div className="space"></div>
+              <Grid container spacing={2} justify="center" >
+                <Grid item xs={3} sm={6}>
+                  <Paper style={{height:75, width:'100%', }} />
+                </Grid>
+                <Grid item xs={3} sm={6}>
+                  <Paper style={{height:75, width:'100%'}} />
+                </Grid>
+                <Grid item xs={3} sm={6}>
+                  <Paper style={{height:75, width:'100%'}} />
+                </Grid>
+              </Grid>     
+            <div className="space"></div>
             <ButtonStyled />
 
             <TextField 
